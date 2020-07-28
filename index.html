@@ -11,9 +11,11 @@
 
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+        <script src="datePicker.js"></script>
     </head>
     <body>
+        
+        <script>document.getElementById('datePicker').value = new Date().toDateInputValue();</script>
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">WeightTrack</a>
@@ -97,14 +99,26 @@
                             <td>14.0</td>
                         </tr>
                     </table>
-                    <button class="btn btn-primary">Load more</button>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <button class="btn btn-primary" onclick="datePicker()">Load more</button>
 
+                </div>
+                <div class="col-md-4">
+                    <p class="lead">New entry</p>
+                    <form class="form" onload="datePicker()">
+                        <input type="date" id="datePicker" class="form-control datePicker" placeholder="Dae">
+                        <div class="clearfix"></div>
+                        <input type="number" min="0" max="400" pattern="^\d*(\.\d{0,2})?$" placeholder="80.0" step="0.1" class="form-control">
+                        
+                    </form>
+                    <canvas></canvas>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="lead">Graph</p>
                 </div>
                 <div class="col-md-6">
-                    
-                </div>
-
                 </div>
             </div>
         </div>
